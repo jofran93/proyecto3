@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content  %}
+
+{% if error %}
+<p>{{ error }}</p>
+{% endif %}
+<br>
+<form method="post">
+    {% csrf_token %}
+        <div class="mb-3">
+            <label for="Usuario" class="form-label">Usuario</label>
+            <input class="form-control" style="width: 15vw; margin-left: 22.2vw;" type="text" name="user" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="contraseña" class="form-label">Contraseña</label>
+            <input class="form-control" style="width: 15vw; margin-left: 22.2vw;" type="password" name="password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Entrar</button>
+</form>
+
+
+{% endblock %}
